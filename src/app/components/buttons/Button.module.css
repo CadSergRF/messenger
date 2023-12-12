@@ -1,0 +1,35 @@
+.form__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.form__button_disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.form__button_fullWidth {
+  width: 100%;
+}
+
+.form__button_text_gray {
+  color: var(--second-color);
+  font-weight: 900;
+}
+
+.form__button_text_white {
+  color: var(--white);
+  font-weight: 900;
+}
+
+.form__button_error {
+  background-color: var(--error-color);
+}
+
+.form__button_bg {
+  background-color: var(--second-color);
+}

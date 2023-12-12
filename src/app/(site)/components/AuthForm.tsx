@@ -4,6 +4,7 @@ import React, { useCallback, useState } from 'react';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import styles from './AuthForm.module.css';
 import { Input } from '@/app/components/inputs/Input';
+import { Button } from '@/app/components/buttons/Button';
 
 type Variant = 'LOGIN' | 'REGISTER';
 
@@ -57,6 +58,7 @@ const AuthForm = () => {
         )}
         <Input id="email" label="Email address" type="email" register={register} errors={errors} />
         <Input id="password" label="Password" type="password" register={register} errors={errors} />
+        <Button>Кнопка</Button>
       </form>
     </div>
   );
