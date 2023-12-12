@@ -21,6 +21,20 @@ const Input: React.FC<InputProps> = ({ label, id, type, required, register, erro
       <label className={styles.form__label} htmlFor={id}>
         {label}
       </label>
+      <div>
+        <input
+          id={id}
+          type={type}
+          autoComplete={id}
+          disabled={disabled}
+          {...register(id, { required })}
+          className={clsx(
+            styles.form__input,
+            errors[id] && [styles.form__input_error],
+            disabled && [styles.form__input_disabled],
+          )}
+        />
+      </div>
     </>
   );
 };

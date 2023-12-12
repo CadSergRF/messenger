@@ -52,7 +52,11 @@ const AuthForm = () => {
   return (
     <div className={styles.form__container}>
       <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
-        <Input />
+        {variant === 'REGISTER' && (
+          <Input id="name" label="Name" register={register} errors={errors} />
+        )}
+        <Input id="email" label="Email address" type="email" register={register} errors={errors} />
+        <Input id="password" label="Password" type="password" register={register} errors={errors} />
       </form>
     </div>
   );

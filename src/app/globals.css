@@ -2,8 +2,10 @@
   --max-width: 1400px;
   --first-color: #131313;
   --second-color: #2e333d;
+  --second-light-color: #61656d;
   --third-color: #6b8afd;
   --forth-color: #fff;
+  --error-color: #c93332;
 }
 
 * {

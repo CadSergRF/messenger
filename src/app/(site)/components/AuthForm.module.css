@@ -1,6 +1,7 @@
 .form__container {
   width: 400px;
   padding: 20px;
+  background-color: var(--first-color);
 }
 
 .form {
