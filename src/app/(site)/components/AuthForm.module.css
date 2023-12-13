@@ -7,3 +7,40 @@
 .form {
   width: 100%;
 }
+
+.login_variant__container {
+  margin-top: 10px;
+  position: relative;
+}
+
+.login_variant__delimiter_container {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+}
+
+.login_variant__delimiter {
+  width: 100%;
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: var(--second-light-color);
+}
+
+.login_variant__header_container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.login_variant__header_text {
+  background-color: var(--first-color);
+  padding: 0 7px;
+  color: #fff;
+}
+
+.social_container {
+  margin-top: 10px;
+  display: flex;
+  gap: 20px;
+}

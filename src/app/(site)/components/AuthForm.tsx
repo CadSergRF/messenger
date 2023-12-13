@@ -3,8 +3,10 @@
 import React, { useCallback, useState } from 'react';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import styles from './AuthForm.module.css';
+import { BsGithub } from 'react-icons/bs';
 import { Input } from '@/app/components/inputs/Input';
 import { Button } from '@/app/components/buttons/Button';
+import { AuthSocialButton } from '@/app/(site)/components/AuthSocialButton/AuthSocialButton';
 
 type Variant = 'LOGIN' | 'REGISTER';
 
@@ -58,8 +60,23 @@ const AuthForm = () => {
         )}
         <Input id="email" label="Email address" type="email" register={register} errors={errors} />
         <Input id="password" label="Password" type="password" register={register} errors={errors} />
-        <Button>Кнопка</Button>
+        <Button disabled={isLoading} fullWidth type="submit">
+          {variant === 'LOGIN' ? 'Войти' : 'Зарегистрироваться'}
+        </Button>
       </form>
+
+      <div className={styles.login_variant__container}>
+        <div className={styles.login_variant__delimiter_container}>
+          <div className={styles.login_variant__delimiter} />
+        </div>
+        <div className={styles.login_variant__header_container}>
+          <span className={styles.login_variant__header_text}>Или продолжить с:</span>
+        </div>
+      </div>
+
+      <div className={styles.social_container}>
+        <AuthSocialButton icon={BsGithub} onClick={() => socialAction('github')} />
+      </div>
     </div>
   );
 };
