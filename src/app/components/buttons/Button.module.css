@@ -7,6 +7,7 @@
   font-weight: 400;
   border: none;
   border-radius: 5px;
+  margin-top: 10px;
 }
 
 .form__button_disabled {

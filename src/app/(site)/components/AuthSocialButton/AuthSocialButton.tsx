@@ -1,4 +1,4 @@
-import { IconType } from 'react-icons';
+import { IconType, IconContext } from 'react-icons';
 import styles from './AuthSocialButton.module.css';
 
 interface AuthSocialButtonProps {
@@ -9,7 +9,9 @@ interface AuthSocialButtonProps {
 const AuthSocialButton: React.FC<AuthSocialButtonProps> = ({ icon: Icon, onClick }) => {
   return (
     <button type="button" onClick={onClick} className={styles.auth_social__btn}>
-      <Icon />
+      <IconContext.Provider value={{ color: 'white' }}>
+        <Icon />
+      </IconContext.Provider>
     </button>
   );
 };

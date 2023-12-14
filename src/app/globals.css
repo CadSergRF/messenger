@@ -6,6 +6,8 @@
   --third-color: #6b8afd;
   --forth-color: #fff;
   --error-color: #c93332;
+  --text-color-main: #fff;
+  --text-color-secondary: #aaaaaa;
 }
 
 * {

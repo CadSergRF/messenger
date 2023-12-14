@@ -3,7 +3,7 @@
 import React, { useCallback, useState } from 'react';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import styles from './AuthForm.module.css';
-import { BsGithub } from 'react-icons/bs';
+import { BsGithub, BsGoogle } from 'react-icons/bs';
 import { Input } from '@/app/components/inputs/Input';
 import { Button } from '@/app/components/buttons/Button';
 import { AuthSocialButton } from '@/app/(site)/components/AuthSocialButton/AuthSocialButton';
@@ -14,7 +14,7 @@ const AuthForm = () => {
   const [variant, setVariant] = useState<Variant>('LOGIN');
   const [isLoading, setIsLoading] = useState(false);
 
-  const toogleVariant = useCallback(() => {
+  const toggleVariant = useCallback(() => {
     if (variant === 'LOGIN') {
       setVariant('REGISTER');
     } else {
@@ -56,10 +56,24 @@ const AuthForm = () => {
     <div className={styles.form__container}>
       <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
         {variant === 'REGISTER' && (
-          <Input id="name" label="Name" register={register} errors={errors} />
+          <Input id="name" label="Name" register={register} errors={errors} disabled={isLoading} />
         )}
-        <Input id="email" label="Email address" type="email" register={register} errors={errors} />
-        <Input id="password" label="Password" type="password" register={register} errors={errors} />
+        <Input
+          id="email"
+          label="Email address"
+          type="email"
+          register={register}
+          errors={errors}
+          disabled={isLoading}
+        />
+        <Input
+          id="password"
+          label="Password"
+          type="password"
+          register={register}
+          errors={errors}
+          disabled={isLoading}
+        />
         <Button disabled={isLoading} fullWidth type="submit">
           {variant === 'LOGIN' ? 'Войти' : 'Зарегистрироваться'}
         </Button>
@@ -76,6 +90,14 @@ const AuthForm = () => {
 
       <div className={styles.social_container}>
         <AuthSocialButton icon={BsGithub} onClick={() => socialAction('github')} />
+        <AuthSocialButton icon={BsGoogle} onClick={() => socialAction('google')} />
+      </div>
+
+      <div className={styles.form_question}>
+        <div>{variant === 'LOGIN' ? 'Нет аккаунта?' : 'Уже есть аккаунт?'}</div>
+        <div className={styles.form__toggle_login} onClick={toggleVariant}>
+          {variant === 'LOGIN' ? 'Зарегистрироваться' : 'Логин'}
+        </div>
       </div>
     </div>
   );

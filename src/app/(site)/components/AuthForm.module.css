@@ -1,15 +1,18 @@
 .form__container {
   width: 400px;
-  padding: 20px;
+  padding: 10px 20px;
   background-color: var(--first-color);
 }
 
 .form {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .login_variant__container {
-  margin-top: 10px;
+  margin: 15px 0;
   position: relative;
 }
 
@@ -43,4 +46,24 @@
   margin-top: 10px;
   display: flex;
   gap: 20px;
+}
+
+.form_question {
+  display: flex;
+  gap: 2px;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--second-light-color);
+  margin-top: 10px;
+}
+
+.form__toggle_login {
+  text-decoration: underline;
+  cursor: pointer;
+  color: var(--text-color-secondary);
+}
+
+.form__toggle_login:hover {
+  color: var(--text-color-main);
 }
